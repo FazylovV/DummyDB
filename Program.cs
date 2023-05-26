@@ -8,7 +8,8 @@ namespace DummyDatabase
     {
         public static void Main()
         {
-            
+            string[][] data = CsvParser.ParseCsv("csv/match.csv");
+            Table table = new Table("json/match.json", data);
         }
     }
 }
