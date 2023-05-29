@@ -6,6 +6,9 @@ public class DataValidator
     {
         switch (type)
         {
+            case "string":
+                return value;
+            
             case "uint":
                 if (uint.TryParse(value, out uint positiveNum))
                     return positiveNum;

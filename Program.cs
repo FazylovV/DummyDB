@@ -8,8 +8,13 @@ namespace DummyDatabase
     {
         public static void Main()
         {
-            string[][] data = CsvParser.ParseCsv("csv/match.csv");
-            Table table = new Table("json/match.json", data);
+            Console.Write("Input path to .json file (example: 'file.json'): ");
+            string jsonPath = Console.ReadLine();
+            Console.Write("Input path to .csv file (example: 'csv.json'): ");
+            string csvPath = Console.ReadLine();
+            
+            Table table = new Table(jsonPath, csvPath);
+            Console.WriteLine(table);
         }
     }
 }
