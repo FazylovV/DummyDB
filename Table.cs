@@ -4,6 +4,8 @@ namespace DummyDatabase;
 
 public class Table
 {
+    private string _jsonPath;
+    private string _csvPath;
     public List<Row> Rows { get; }
     public TableScheme TableScheme { get; }
 
@@ -17,6 +19,15 @@ public class Table
         {
             Rows.Add(new Row(TableScheme, data[i], i + 1)); 
         }
+    }
+
+    public static Table Create(string name)
+    {
+        string csvPath = $"csv/{name}.csv";
+        string jsonPath = $"json/{name}.json";
+        File.Create(csvPath);
+        File.Create(jsonPath);
+        return new Table(csvPath, jsonPath);
     }
 
     private int[] GetMaxWidthOfColumns(List<Column> columns)
