@@ -2,7 +2,7 @@ namespace DummyDatabase;
 
 public class DataValidator
 {
-    public static object ValidateValue(string value, string type, int lineNumber)
+    public static object GetValidateValue(string value, string type, int lineNumber)
     {
         switch (type)
         {
